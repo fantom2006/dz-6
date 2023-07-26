@@ -131,89 +131,107 @@ margin-top: 40px;
 color: white;
 background-color: red;
 margin-left: 10px;
-`
-btn1.addEventListener('mouseover', () => {
-    btn1.style.backgroundColor = 'grey'
+// btn1.addEventListener('mouseover', () => {
+//     btn1.style.backgroundColor = 'grey'
 
-})
-btn1.addEventListener('mouseout', () => {
-    btn1.style.backgroundColor = 'green'
+// })
+// btn1.addEventListener('mouseout', () => {
+//     btn1.style.backgroundColor = 'green'
 
-})
-
-
-btn2.addEventListener('mouseover', () => {
-    btn2.style.backgroundColor = 'grey'
-
-})
-btn2.addEventListener('mouseout', () => {
-    btn2.style.backgroundColor = 'red'
-
-})
-
-const body = document.querySelector('body')
-const light = document.getElementById('light')
-body.append(light)
-const dark = document.createElement('button')
-dark.textContent = 'dark'
-light.append(dark)
-const white = document.createElement('button')
+// })
 
 
-dark.addEventListener('mouseover', () => {
-    dark.style.color = 'blue'
-})
+// btn2.addEventListener('mouseover', () => {
+//     btn2.style.backgroundColor = 'grey'
 
-dark.addEventListener('mouseout', () => {
-    dark.style.color = 'grey'
-})
+// })
+// btn2.addEventListener('mouseout', () => {
+//     btn2.style.backgroundColor = 'red'
 
-dark.style.cssText = `
-margin-left: 1100px;
-position: absolute;
-margin-top: -80px;
-font-size: 20px;
-background-color: white;
-border-radius: 10px;
-border-color: green;
-border: none;
-color: grey;
-`
+// })
 
-dark.addEventListener('click', () => {
-    body.style.cssText = `
-    background-color: black;
+// const body = document.querySelector('body')
+// const light = document.getElementById('light')
+// body.append(light)
+// const dark = document.createElement('button')
+// dark.textContent = 'dark'
+// light.append(dark)
+// const white = document.createElement('button')
+
+
+// dark.addEventListener('mouseover', () => {
+//     dark.style.color = 'blue'
+// })
+
+// dark.addEventListener('mouseout', () => {
+//     dark.style.color = 'grey'
+// })
+
+// dark.style.cssText = `
+
+function toggleMode() {
+    const body = document.querySelector('body');
+    body.classList.toggle('dark-mode'); 
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('mode', 'dark'); 
+    } else {
+      localStorage.setItem('mode', 'white'); 
+    }
+  }
+  
+  const savedMode = localStorage.getItem('mode');
+  if (savedMode === 'dark') {
+    document.querySelector('body').classList.add('dark-mode'); 
+  }
+
+
+
+
+// margin-left: 1100px;
+// position: absolute;
+// margin-top: -80px;
+// font-size: 20px;
+// background-color: white;
+// border-radius: 10px;
+// border-color: green;
+// border: none;
+// color: grey;
+// `
+
+// dark.addEventListener('click', () => {
+//     body.style.cssText = `
+//     background-color: black;
     
-    `
-    btnModal.style.backgroundColor = 'black'
-    btnModal.style.color = 'white'
-    btnModal.style.borderColor = 'white'
-    h1.style.cssText = `
-    color: 
-    `
-    modalWindow.style.cssText = `
-    width: 700px;
-height:300px;
-background-color: black;
+//     `
+//     btnModal.style.backgroundColor = 'black'
+//     btnModal.style.color = 'white'
+//     btnModal.style.borderColor = 'white'
+//     h1.style.cssText = `
+//     color: 
+//     `
+//     modalWindow.style.cssText = `
+//     width: 700px;
+// height:300px;
+// background-color: black;
 
-position: fixed;
-top: 370px;
-left: 50%;
-transform: translate(-50%, -50%);
+// position: fixed;
+// top: 370px;
+// left: 50%;
+// transform: translate(-50%, -50%);
 
-padding: 20px;
-font-size: 1.5rem;
-    `
-  h1.style.cssText = `
-  color: white;
-  `
-  p.style.cssText = `
-  color: white;
-  font-family: sans-serif;
+// padding: 20px;
+// font-size: 1.5rem;
+//     `
+//   h1.style.cssText = `
+//   color: white;
+//   `
+//   p.style.cssText = `
+//   color: white;
+//   font-family: sans-serif;
 
-  `
+//   `
 
-})
+// })
 
 
 
